@@ -1,0 +1,10 @@
+FROM docker.io/mysql:latest as builder
+
+ENV MYSQL_ROOT_PASSWORD=root
+
+ENV MYSQL_USER=admin
+
+ENV MYSQL_password=password
+
+COPY ./sql /docker-entrypoint-initdb.d/
+
